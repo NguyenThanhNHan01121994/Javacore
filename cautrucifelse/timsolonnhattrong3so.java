@@ -5,7 +5,9 @@ class timsolonnhattrong3so {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int a ,b ,c , max ;
-		
+		for (int i = 1 ; i <5 ; i ++ ) {
+			System.out.println(i);
+			
 		java.util.Scanner scanner = new Scanner(System.in);
 		System.out.println("nhap a");
 		a = scanner.nextInt();
