@@ -5,6 +5,9 @@ class timsonhonhat {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int sothunhat , sothuhai;
+		for (i=1 , i< 10 , i ++) {
+			System.out.println(i);
+		
 		Scanner scanner= new Scanner(System.in);
 		System.out.println("nhap vao so thu 1: ");
 		sothunhat= scanner.nextInt();
