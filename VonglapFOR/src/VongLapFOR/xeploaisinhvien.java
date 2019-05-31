@@ -38,9 +38,9 @@ class xeploaisinhvien {
 		}else{
 			ketquaxeploai = "loai kem";
 		}
-		if (diemki1 <3) {
-			break;
-			}
+		if (diemTb < 5) {
+			continue; }
+			System.out.println("Chua qua môn");
 		System.out.println("ho va ten cua sinh vien:" +name);
 		System.out.println("tuoi cua sinh vien:" +year);
 		System.out.println("dia chi cua sinh vien:" +address);
