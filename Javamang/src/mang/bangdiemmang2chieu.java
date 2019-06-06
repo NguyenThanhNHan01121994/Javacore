@@ -5,7 +5,7 @@ class bangdiemmang2chieu {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int n, m , sum=0,number;
-		float tbc;
+		float tbcn,tbcm;
 	     
 	    Scanner scanner = new Scanner(System.in);
 	    
@@ -52,8 +52,10 @@ class bangdiemmang2chieu {
 	   
 	    System.out.println("tong cac hang va cot="+sum);
 		 //tính tổng trung bình
-		        tbc= (float)sum/(m*n);
-		        System.out.println("trung binh cong cua m="+tbc);
+		        tbcm= (float)sum/(m-1);
+		        System.out.println("trung binh cong cua m="+tbcm);
+		        tbcn= (float)sum/(n-1);
+		        System.out.println("trung binh cong cua m="+tbcn);
 		        scanner.close();
 	    }
 	}
