@@ -1,5 +1,5 @@
 package mang;
-
+import java.util.*;
 class baitoancokhimanghaichieu {
 
 	public static void main(String[] args) {
