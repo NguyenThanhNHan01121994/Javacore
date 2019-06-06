@@ -54,6 +54,7 @@ class bangdiemmang2chieu {
 		 //tính tổng trung bình
 		        tbc= (float)sum/(m*n);
 		        System.out.println("trung binh cong cua m="+tbc);
+		        scanner.close();
 	    }
 	}
 
