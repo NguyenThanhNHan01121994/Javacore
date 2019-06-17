@@ -1,0 +1,222 @@
+package baitapquanlychuyenxe;
+ 
+import java.util.Scanner;
+ 
+public class ChuyenXe {
+    protected String maSoChuyen, hoTenTaiXe, soXe;
+    protected double doanhThu;
+    Scanner scanner = new Scanner(System.in);
+     
+    public ChuyenXe() {
+        super();
+        this.maSoChuyen = "";
+        this.hoTenTaiXe = "";
+        this.soXe = "";
+        this.doanhThu = 0;
+    }
+ 
+    public ChuyenXe(String maSoChuyen, String hoTenTaiXe, String soXe, double doanhThu) {
+        super();
+        this.maSoChuyen = maSoChuyen;
+        this.hoTenTaiXe = hoTenTaiXe;
+        this.soXe = soXe;
+        this.doanhThu = doanhThu;
+    }
+ 
+    public String getMaSoChuyen() {
+        return maSoChuyen;
+    }
+ 
+    public void setMaSoChuyen(String maSoChuyen) {
+        this.maSoChuyen = maSoChuyen;
+    }
+ 
+    public String getHoTenTaiXe() {
+        return hoTenTaiXe;
+    }
+ 
+    public void setHoTenTaiXe(String hoTenTaiXe) {
+        this.hoTenTaiXe = hoTenTaiXe;
+    }
+ 
+    public String getSoXe() {
+        return soXe;
+    }
+ 
+    public void setSoXe(String soXe) {
+        this.soXe = soXe;
+    }
+ 
+    public double getDoanhThu() {
+        return doanhThu;
+    }
+ 
+    public void setDoanhThu(double doanhThu) {
+        this.doanhThu = doanhThu;
+    }
+     
+    public void nhapThongTinChuyenXe() {
+        System.out.print("Nh?p mã s? chuy?n: ");
+        maSoChuyen = scanner.nextLine();
+        System.out.print("Nh?p h? tên tài x?: ");
+        hoTenTaiXe = scanner.nextLine();
+        System.out.print("Nh?p s? xe: ");
+        soXe = scanner.nextLine();
+        System.out.print("Nh?p doanh thu: ");
+        doanhThu = scanner.nextDouble();
+    }
+     
+    public String toString() {
+        return "Mã s? chuy?n: " + this.maSoChuyen + ", h? tên tài x?: " + this.hoTenTaiXe
+                + ", s? xe: " + this.soXe + ", doanh thu: " + this.doanhThu;
+    }
+}
+
+
+package baitapquanlychuyenxe;
+ 
+public class ChuyenXeNoiThanh extends ChuyenXe {
+    private String soTuyen;
+    private double soKmDiDuoc;
+     
+    public ChuyenXeNoiThanh() {
+        super();
+    }
+ 
+    public ChuyenXeNoiThanh(String soTuyen, double soKmDiDuoc) {
+        super();
+        this.soTuyen = soTuyen;
+        this.soKmDiDuoc = soKmDiDuoc;
+    }
+ 
+    public double getSoKmDiDuoc() {
+        return soKmDiDuoc;
+    }
+ 
+    public void setSoKmDiDuoc(double soKmDiDuoc) {
+        this.soKmDiDuoc = soKmDiDuoc;
+    }
+ 
+    public Scanner getScanner() {
+        return scanner;
+    }
+ 
+    public void setScanner(Scanner scanner) {
+        this.scanner = scanner;
+    }
+     
+    public void nhapThongTinChuyenXe() {
+        super.nhapThongTinChuyenXe();   // g?i hàm nhapThongTinChuyenXe() c?a l?p ChuyenXe
+        System.out.print("Nh?p s? tuy?n: ");
+        soTuyen = scanner.nextLine();
+        System.out.print("Nh?p s? km di du?c: ");
+        soKmDiDuoc = scanner.nextDouble();
+    }
+     
+    public String toString() {
+        return super.toString() + ", s? tuy?n: " + this.soTuyen + 
+                ", s? km di du?c: " + this.soKmDiDuoc;
+    }
+}
+
+
+package baitapquanlychuyenxe;
+ 
+public class ChuyenXeNgoaiThanh extends ChuyenXe {
+    private String noiDen;
+    private int soNgayDiDuoc;
+     
+    public ChuyenXeNgoaiThanh() {
+        super();
+        this.noiDen = "";
+        this.soNgayDiDuoc = 0;
+    }
+ 
+    public ChuyenXeNgoaiThanh(String noiDen, int soNgayDiDuoc) {
+        super();
+        this.noiDen = noiDen;
+        this.soNgayDiDuoc = soNgayDiDuoc;
+    }
+ 
+    public String getNoiDen() {
+        return noiDen;
+    }
+ 
+    public void setNoiDen(String noiDen) {
+        this.noiDen = noiDen;
+    }
+ 
+    public int getSoNgayDiDuoc() {
+        return soNgayDiDuoc;
+    }
+ 
+    public void setSoNgayDiDuoc(int soNgayDiDuoc) {
+        this.soNgayDiDuoc = soNgayDiDuoc;
+    }
+     
+    public void nhapThongTinChuyenXe() {
+        super.nhapThongTinChuyenXe();
+        System.out.print("Nh?p noi d?n: ");
+        noiDen = scanner.nextLine();
+        System.out.print("Nh?p s? ngày di du?c: ");
+        soNgayDiDuoc = scanner.nextInt();
+    }
+    public String toString() {
+        return super.toString() + ", noi d?n: " + this.noiDen + ", s? ngày di du?c: " + 
+                this.soNgayDiDuoc;
+    }
+}
+
+package baitapquanlychuyenxe;
+ 
+import java.util.ArrayList;
+import java.util.Scanner;
+ 
+public class Main {
+ 
+    public static void main(String[] args) {
+        ArrayList<ChuyenXeNoiThanh> arrChuyenXeNoiThanh = new ArrayList<>();
+        ArrayList<ChuyenXeNgoaiThanh> arrChuyenXeNgoaiThanh = new ArrayList<>();
+        int soChuyenNoiThanh, soChuyenNgoaiThanh;
+        double doanhThuXeNoiThanh = 0, doanhThuXeNgoaiThanh = 0;
+         
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Nh?p s? chuy?n xe n?i thành: ");
+        soChuyenNoiThanh = scanner.nextInt();
+        System.out.print("Nh?p s? chuy?n xe ngo?i thành: ");
+        soChuyenNgoaiThanh = scanner.nextInt();
+         
+        System.out.println("Nh?p thông tin chuy?n xe n?i thành:");
+        for (int i = 0; i < soChuyenNoiThanh; i++) {
+            System.out.println("Nh?p thông tin chuy?n xe th? " + (i + 1) + ":");
+            ChuyenXeNoiThanh chuyenXeNoiThanh = new ChuyenXeNoiThanh();
+            chuyenXeNoiThanh.nhapThongTinChuyenXe();
+            doanhThuXeNoiThanh += chuyenXeNoiThanh.getDoanhThu();
+            arrChuyenXeNoiThanh.add(chuyenXeNoiThanh);
+        }
+         
+        System.out.println("Nh?p thông tin chuy?n xe ngo?i thành:");
+        for (int i = 0; i < soChuyenNgoaiThanh; i++) {
+            System.out.println("Nh?p thông tin chuy?n xe th? " + (i + 1) + ":");
+            ChuyenXeNgoaiThanh chuyenXeNgoaiThanh = new ChuyenXeNgoaiThanh();
+            chuyenXeNgoaiThanh.nhapThongTinChuyenXe();
+            doanhThuXeNgoaiThanh += chuyenXeNgoaiThanh.getDoanhThu();
+            arrChuyenXeNgoaiThanh.add(chuyenXeNgoaiThanh);
+        }
+         
+        System.out.println("-----Thông tin chuy?n xe n?i thành-----");
+        for (int i = 0; i < arrChuyenXeNoiThanh.size(); i++) {
+            System.out.println(arrChuyenXeNoiThanh.get(i).toString());
+        }
+         
+        System.out.println("-----Thông tin chuy?n xe ngo?i thành-----");
+        for (int i = 0; i < arrChuyenXeNgoaiThanh.size(); i++) {
+            System.out.println(arrChuyenXeNgoaiThanh.get(i).toString());
+        }
+         
+        System.out.println("Doanh thu t?ng chuy?n xe: ");
+        System.out.println("Doanh thu chuy?n xe n?i thành: " + doanhThuXeNoiThanh);
+        System.out.println("Doanh thu chuy?n xe ngo?i thành: " + doanhThuXeNgoaiThanh);
+    }
+ 
+}
